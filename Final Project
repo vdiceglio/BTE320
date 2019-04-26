@@ -1,0 +1,1159 @@
+#include <iostream>
+
+#include <iomanip>
+
+#include <limits>
+
+#include <string>
+
+using namespace std;
+
+
+
+struct Selection_Choices
+
+{
+    
+    string choice1;
+    
+    string choice2;
+    
+    string choice3;
+    
+    string choice4;
+    
+};
+
+
+
+Selection_Choices lemonade[4];
+
+Selection_Choices cookies[4];
+
+Selection_Choices shirts[3];
+
+Selection_Choices sneakers[3];
+
+Selection_Choices tacos[4];
+
+Selection_Choices ticket[2];
+
+
+int menu_1 = 1;
+
+int menu_2 = 1;
+
+int menu_3 = 1;
+
+int menu_4 = 1;
+
+int menu_5 = 1;
+
+int menu_6 = 1;
+
+double running_Total = 0;
+
+
+
+void lemonade_Menu();
+
+void cookie_Menu();
+
+void shirt_Menu();
+
+void sneakers_Menu();
+
+void taco_Menu();
+
+void ticket_Menu();
+
+void purchase_Total();
+
+void purchase_order(double);
+
+void menu_check();
+
+
+
+int main()
+
+{
+    
+    int menu;
+    
+    cout << "\n\n\n\n\n\n\n\n\n\n \t EACH ITEM HAS A PURCHASE LIMIT DUE TO POPULAR DEMAND \n";
+    
+    cout << "\n\n Please Select From The Following Menu ";
+    
+    cout << "\n\n 1. Drink Menu " << endl;
+    
+    cout << "\n 2. Cookie Menu  " << endl;
+    
+    cout << "\n 3. Shirt Menu " << endl;
+    
+    cout << "\n 4. Sneakers Menu " << endl;
+    
+    cout<<  "\n 5. Taco Menu "<<endl;
+    
+    cout << "\n 6. Concert Ticket Menu" << endl;
+    
+    cout << "\n 7. Proceed To Check Out " << endl;
+    
+    cout << "\n 8. Exit " << endl;
+    
+    cout << "\n Current Selection .......     ";
+    
+    cin >> menu;
+    
+    
+    
+    switch (menu)
+    
+    {
+            
+        case 1:
+            
+            lemonade_Menu();
+            
+            break;
+            
+            
+        case 2:
+            
+            cookie_Menu();
+            
+            break;
+            
+            
+        case 3:
+            
+            shirt_Menu();
+            
+            break;
+            
+        case 4:
+            
+            sneakers_Menu ();
+            
+            break;
+            
+        case 5:
+            
+            taco_Menu();
+            
+            break;
+            
+        case 6:
+            
+            ticket_Menu();
+            
+            break;
+            
+        case 7:
+            
+            purchase_Total();
+            
+            break;
+            
+            
+            
+        case 8:
+            
+            exit(0);
+            
+            break;
+            
+            
+            
+        default:
+            
+            cout << "\n\n\n \t\t\t INVALID NUMBER - CHOOSE FROM 1 - 8 ";
+            
+            cout << " \n\n ";
+            
+            cout << " \t\t\t    PRESS ENTER TO CONTINUE ";
+            
+            cin.ignore(std::numeric_limits<streamsize>::max(), '\n');
+            
+            cin.get();
+            
+            main();
+            
+    }
+    
+    
+    
+    //system("pause");
+    
+    
+    
+    return 0;
+    
+}
+
+
+
+void lemonade_Menu() // <Jason>
+
+{
+    
+    menu_check();
+    
+    double price = 0;
+    
+    int menu;
+    
+    cout << "\n\n\n\n\n\n\n \t LIMIT IS 4 PER PERSON \n";
+    
+    cout << "\n\n Please Select From The Availible Cup Sizes ";
+    
+    cout << "\n\n 1. 8 oz  " << endl;
+    
+    cout << "\n 2. 12 oz " << endl;
+    
+    cout << "\n 3. 16 oz " << endl;
+    
+    cout << "\n 4. 24 oz" << endl;
+    
+    cout << "\n 5. Return To Main Menu " << endl;
+    
+    cout << "\n Current Selection .......     ";
+    
+    cin >> menu;
+    
+    
+    
+    switch (menu)
+    
+    {
+            
+            
+            
+        case 1:
+            
+            menu_1++;
+            
+            price = .50;
+            
+            for (int index = 0; index < menu_1; index++)
+                
+            {
+                
+                lemonade[0].choice1 = " Lemonade 8oz  = .50 ";
+                
+            }
+            
+            purchase_order(price);
+            
+            break;
+            
+            
+            
+        case 2:
+            
+            menu_1++;
+            
+            price = .75;
+            
+            for (int index = 0; index < menu_1; index++)
+                
+            {
+                
+                lemonade[1].choice2 = " Lemonade 12oz = .75 ";
+                
+            }
+            
+            purchase_order(price);
+            
+            break;
+            
+            
+            
+        case 3:
+            
+            menu_1++;
+            
+            price = 1.00;
+            
+            for (int index = 0; index < menu_1; index++)
+                
+            {
+                
+                lemonade[2].choice3 = " Lemonade 16oz = 1.00 ";
+                
+            }
+            
+            purchase_order(price);
+            
+            break;
+            
+        case 4:
+            
+            menu_1++;
+            
+            price = 1.25;
+            
+            for (int index = 0; index < menu_1; index++)
+                
+            {
+                
+                lemonade[3].choice4 = " Lemonade 24oz = 1.25 ";
+                
+            }
+            
+            purchase_order(price);
+            
+            break;
+            
+        case 5:
+            
+            main();
+            
+            break;
+            
+            
+            
+        default:
+            
+            cout << "\n\n\n \t\t\t INVALID NUMBER - CHOOSE FROM 1 - 4 ";
+            
+            cout << " \n\n ";
+            
+            cout << " \t\t\t    PRESS ENTER TO CONTINUE ";
+            
+            cin.ignore(std::numeric_limits<streamsize>::max(), '\n');
+            
+            cin.get();
+            
+            lemonade_Menu();
+            
+    }
+    
+}
+
+
+
+void cookie_Menu() // <Mitchell>
+
+{
+    
+    menu_check();
+    
+    double price = .75;
+    
+    int menu;
+    
+    cout << "\n\n\n\n\n\n\n \t LIMIT IS 4 PER PERSON \n";
+    
+    cout << "\n\n Please Select From The Availible Cookies ";
+    
+    cout << "\n\n 1. Chocolate Chip " << endl;
+    
+    cout << "\n 2. Sugar " << endl;
+    
+    cout << "\n 3. Peanut Butter " << endl;
+    
+    cout << "\n 4. Caramel Pecan Snickerdoodle " << endl;
+    
+    cout << "\n 5. Return To Main Menu " << endl;
+    
+    cout << "\n Current Selection .......     ";
+    
+    cin >> menu;
+    
+    
+    
+    switch (menu)
+    
+    {
+            
+            
+            
+        case 1:
+            
+            menu_2++;
+            
+            for (int index = 0; index < menu_2; index++)
+                
+            {
+                
+                cookies[0].choice1 = " Chocolate Chip Cookie = .75 ";
+                
+            }
+            
+            purchase_order(price);
+            
+            break;
+            
+            
+            
+        case 2:
+            
+            menu_2++;
+            
+            for (int index = 0; index < menu_2; index++)
+                
+            {
+                
+                cookies[1].choice2 = " Sugar Cookie = .75 ";
+                
+            }
+            
+            purchase_order(price);
+            
+            break;
+            
+            
+            
+        case 3:
+            
+            menu_2++;
+            
+            for (int index = 0; index < menu_2; index++)
+                
+            {
+                
+                cookies[2].choice3 = " Peanut Butter Cookie = .75 ";
+                
+            }
+            
+            purchase_order(price);
+            
+            break;
+            
+        case 4:
+            
+            menu_2++;
+            
+            for (int index = 0; index < menu_2; index++)
+                
+            {
+                
+                cookies[3].choice4 = " Caramel Pecan Snickerdoodle = .75 ";
+                
+            }
+            
+            purchase_order(price);
+            
+            break;
+            
+            
+        case 5:
+            
+            main();
+            
+            break;
+            
+            
+            
+        default:
+            
+            cout << "\n\n\n \t\t\t INVALID NUMBER - CHOOSE FROM 1 - 4 ";
+            
+            cout << " \n\n ";
+            
+            cout << " \t\t\t    PRESS ENTER TO CONTINUE ";
+            
+            cin.ignore(std::numeric_limits<streamsize>::max(), '\n');
+            
+            cin.get();
+            
+            cookie_Menu();
+            
+    }
+    
+}
+
+
+
+void shirt_Menu() // <Tori>
+
+{
+    
+    menu_check();
+    
+    double price = 0;
+    
+    int menu;
+    
+    cout << "\n\n\n\n\n\n\n \t LIMIT IS 3 PER PERSON \n";
+    
+    cout << "\n\n Please Select From The Availible Shirts ";
+    
+    cout << "\n\n 1. Non-Autographed " << endl;
+    
+    cout << "\n 2. Autographed " << endl;
+    
+    cout << "\n 3. Embroidered " << endl;
+    
+    cout << "\n 4. Return To Main Menu " << endl;
+    
+    cout << "\n Current Selection .......     ";
+    
+    cin >> menu;
+    
+    
+    
+    switch (menu)
+    
+    {
+            
+            
+            
+        case 1:
+            
+            menu_3++;
+            
+            price = 4.00;
+            
+            for (int index = 0; index < menu_3; index++)
+                
+            {
+                
+                shirts[0].choice1 = " Non-Autographed Shirt = 4.00 ";
+                
+            }
+            
+            purchase_order(price);
+            
+            break;
+            
+            
+            
+        case 2:
+            
+            menu_3++;
+            
+            price = 8.00;
+            
+            for (int index = 0; index < menu_3; index++)
+                
+            {
+                
+                shirts[1].choice2 = " Autographed Shirt = 8.00 ";
+                
+            }
+            
+            purchase_order(price);
+            
+            break;
+            
+        case 3:
+            
+            menu_3++;
+            
+            price = 10.00;
+            
+            for (int index = 0; index < menu_3; index++)
+                
+            {
+                
+                shirts [2].choice3 = " Embroidered = 10.00 ";
+                
+            }
+            
+            purchase_order(price);
+            
+            break;
+            
+        case 4:
+            
+            cout << " Return To Main Menu " << endl;
+            
+            main();
+            
+            break;
+            
+            
+            
+        default:
+            
+            cout << "\n\n\n \t\t\t INVALID NUMBER - CHOOSE FROM 1 - 3 ";
+            
+            cout << " \n\n ";
+            
+            cout << " \t\t\t    PRESS ENTER TO CONTINUE ";
+            
+            cin.ignore(std::numeric_limits<streamsize>::max(), '\n');
+            
+            cin.get();
+            
+            shirt_Menu();
+            
+    }
+}
+
+
+void sneakers_Menu() // <Tori>
+
+{
+    
+    menu_check();
+    
+    double price = 0;
+    
+    int menu;
+    
+    cout << "\n\n\n\n\n\n\n \t LIMIT IS 3 PER PERSON \n";
+    
+    cout << "\n\n Please Select From The Availible Shirts ";
+    
+    cout << "\n\n 1. Nike Epic React " << endl;
+    
+    cout << "\n 2. Nike Roshe " << endl;
+    
+    cout << "\n 3. Nike Flex RN " << endl;
+    
+    cout << "\n 4. Return To Main Menu " << endl;
+    
+    cout << "\n Current Selection .......     ";
+    
+    cin >> menu;
+    
+    
+    
+    switch (menu)
+    
+    {
+            
+            
+            
+        case 1:
+            
+            menu_4++;
+            
+            price = 125.00;
+            
+            for (int index = 0; index < menu_4; index++)
+                
+            {
+                
+                sneakers[0].choice1 = " Nike Epic React = 125.00 ";
+                
+            }
+            
+            purchase_order(price);
+            
+            break;
+            
+            
+            
+        case 2:
+            
+            menu_4++;
+            
+            price = 110.00;
+            
+            for (int index = 0; index < menu_4; index++)
+                
+            {
+                
+                sneakers[1].choice2 = " Nike Roshe = 110.00 ";
+                
+            }
+            
+            purchase_order(price);
+            
+            break;
+            
+        case 3:
+            
+            menu_4++;
+            
+            price = 100.00;
+            
+            for (int index = 0; index < menu_4; index++)
+                
+            {
+                
+                sneakers [2].choice3 = " Nike Flex RN = 100.00 ";
+                
+            }
+            
+            purchase_order(price);
+            
+            break;
+            
+        case 4:
+            
+            cout << " Return To Main Menu " << endl;
+            
+            main();
+            
+            break;
+            
+            
+            
+        default:
+            
+            cout << "\n\n\n \t\t\t INVALID NUMBER - CHOOSE FROM 1 - 3 ";
+            
+            cout << " \n\n ";
+            
+            cout << " \t\t\t    PRESS ENTER TO CONTINUE ";
+            
+            cin.ignore(std::numeric_limits<streamsize>::max(), '\n');
+            
+            cin.get();
+            
+            sneakers_Menu();
+            
+    }
+    
+}
+
+void taco_Menu() // <Jason>
+
+{
+    
+    menu_check();
+    
+    double price = 0;
+    
+    int menu;
+    
+    cout << "\n\n\n\n\n\n\n \t LIMIT IS 4 PER PERSON \n";
+    
+    cout << "\n\n Please Select From The Availible Tacos ";
+    
+    cout << "\n\n 1. Tacos Al Pastor  " << endl;
+    
+    cout << "\n 2. Tacos de Lengua " << endl;
+    
+    cout << "\n 3. Tacos de Barbacoa " << endl;
+    
+    cout << "\n 4. Tacos de Chorizo (Fried egg on top) " << endl;
+    
+    cout << "\n 5. Return To Main Menu " << endl;
+    
+    cout << "\n Current Selection .......     ";
+    
+    cin >> menu;
+    
+    
+    
+    switch (menu)
+    
+    {
+            
+            
+            
+        case 1:
+            
+            menu_5++;
+            
+            price = .50;
+            
+            for (int index = 0; index < menu_5; index++)
+                
+            {
+                
+                tacos[0].choice1 = " Tacos Al Pastor  = .50 ";
+                
+            }
+            
+            purchase_order(price);
+            
+            break;
+            
+            
+            
+        case 2:
+            
+            menu_5++;
+            
+            price = .75;
+            
+            for (int index = 0; index < menu_5; index++)
+                
+            {
+                
+                tacos[1].choice2 = " Tacos de Lengua = .75 ";
+                
+            }
+            
+            purchase_order(price);
+            
+            break;
+            
+            
+            
+        case 3:
+            
+            menu_5++;
+            
+            price = 1.00;
+            
+            for (int index = 0; index < menu_5; index++)
+                
+            {
+                
+                tacos[2].choice3 = " Tacos de Barbacoa = 1.00 ";
+                
+            }
+            
+            purchase_order(price);
+            
+            break;
+            
+        case 4:
+            
+            menu_5++;
+            
+            price = 1.50;
+            
+            for (int index = 0; index < menu_5; index++)
+                
+            {
+                
+                tacos[3].choice4 = " Tacos de Chorizo (Fried egg on top) = 1.50 ";
+                
+            }
+            
+            purchase_order(price);
+            
+            break;
+            
+        case 5:
+            
+            main();
+            
+            break;
+            
+            
+            
+        default:
+            
+            cout << "\n\n\n \t\t\t INVALID NUMBER - CHOOSE FROM 1 - 4 ";
+            
+            cout << " \n\n ";
+            
+            cout << " \t\t\t    PRESS ENTER TO CONTINUE ";
+            
+            cin.ignore(std::numeric_limits<streamsize>::max(), '\n');
+            
+            cin.get();
+            
+            taco_Menu();
+            
+    }
+    
+}
+
+
+void ticket_Menu() // <Mitchell>
+
+{
+    
+    menu_check();
+    
+    double price = 0;
+    
+    int menu;
+    
+    cout << "\n\n\n\n\n\n\n \t LIMIT IS 2 PER PERSON \n";
+    
+    cout << "\n\n Please Select From The Availible Concert Tickets ";
+    
+    cout << "\n\n 1. General Admission  " << endl;
+    
+    cout << "\n 2. VIP Pass " << endl;
+    
+    cout << "\n 3. Return To Main Menu " << endl;
+    
+    cout << "\n Current Selection .......     ";
+    
+    cin >> menu;
+    
+    
+    
+    switch (menu)
+    
+    {
+            
+            
+            
+        case 1:
+            
+            menu_6++;
+            
+            price = 150.00;
+            
+            for (int index = 0; index < menu_6; index++)
+                
+            {
+                
+                ticket[0].choice1 = " General Admission  = 150.00 ";
+                
+            }
+            
+            purchase_order(price);
+            
+            break;
+            
+            
+            
+        case 2:
+            
+            menu_6++;
+            
+            price = 200.00;
+            
+            for (int index = 0; index < menu_6; index++)
+                
+            {
+                
+                ticket[1].choice2 = " VIP Pass = 200.00 ";
+                
+            }
+            
+            purchase_order(price);
+            
+            break;
+            
+            
+            
+            
+            
+        case 3:
+            
+            main();
+            
+            break;
+            
+            
+            
+        default:
+            
+            cout << "\n\n\n \t\t\t INVALID NUMBER - CHOOSE FROM 1 - 2 ";
+            
+            cout << " \n\n ";
+            
+            cout << " \t\t\t    PRESS ENTER TO CONTINUE ";
+            
+            cin.ignore(std::numeric_limits<streamsize>::max(), '\n');
+            
+            cin.get();
+            
+            ticket_Menu();
+            
+    }
+    
+}
+
+
+void purchase_order(double current_order)
+
+{
+    
+    
+    
+    int menu;
+    
+    cout << "\n\n What Would You Like To Do ";
+    
+    cout << "\n\n 1. Continue Shopping  " << endl;
+    
+    cout << "\n 2. Procced To Check Out " << endl;
+    
+    cout << "\n Current Selection .......     ";
+    
+    cin >> menu;
+    
+    
+    
+    
+    
+    switch (menu)
+    
+    {
+            
+        case 1:
+            
+            if (running_Total == 0)
+                
+            {
+                
+                running_Total = current_order;
+                
+            }
+            
+            else
+                
+            {
+                
+                running_Total = running_Total + current_order;
+                
+            }
+            
+            main();
+            
+            break;
+            
+            
+            
+        case 2:
+            
+            if (running_Total == 0)
+                
+            {
+                
+                running_Total = current_order;
+                
+            }
+            
+            else
+                
+            {
+                
+                running_Total = running_Total + current_order;
+                
+            }
+            
+            purchase_Total();
+            
+            break;
+            
+            
+            
+        default:
+            
+            cout << "\n\n\n \t\t\t INVALID NUMBER - CHOOSE FROM 1 - 2 ";
+            
+            cout << " \n\n ";
+            
+            cout << " \t\t\t    PRESS ENTER TO CONTINUE ";
+            
+            cin.ignore(std::numeric_limits<streamsize>::max(), '\n');
+            
+            cin.get();
+            
+            purchase_order(running_Total);
+            
+    }
+}
+
+void purchase_Total()
+
+{
+    
+    cout << "\n\n\n\n Your Order's Summary \n\n ";
+    
+    
+    
+    for (int index = 0; index < 4; index++)
+        
+    {
+        
+        cout << lemonade[index].choice1;
+        
+        cout << lemonade[index].choice2;
+        
+        cout << lemonade[index].choice3;
+        
+        cout << lemonade[index].choice4 << endl;
+        
+    }
+    
+    for (int index = 0; index < 4; index++)
+        
+    {
+        
+        cout << cookies[index].choice1;
+        
+        cout << cookies[index].choice2;
+        
+        cout << cookies[index].choice3;
+        
+        cout << cookies[index].choice4 << endl;
+    }
+    
+    for (int index = 0; index < 3; index++)
+        
+    {
+        
+        cout << shirts[index].choice1;
+        
+        cout << shirts[index].choice2;
+        
+        cout << shirts[index].choice3 << endl;
+        
+    }
+    
+    for (int index = 0; index < 3; index++)
+        
+    {
+        
+        cout << sneakers[index].choice1;
+        
+        cout << sneakers[index].choice2;
+        
+        cout << sneakers[index].choice3 << endl;
+        
+    }
+    
+    for (int index = 0; index < 4; index++)
+        
+    {
+        
+        cout << tacos[index].choice1;
+        
+        cout << tacos[index].choice2;
+        
+        cout << tacos[index].choice3;
+        
+        cout << tacos[index].choice4 << endl;
+        
+    }
+    
+    for (int index = 0; index < 2; index++)
+        
+    {
+        
+        cout << ticket[index].choice1;
+        
+        cout << ticket[index].choice2 << endl;
+        
+        
+        
+    }
+    
+    cout << "\n\n\n\n Your Order's Total ...... $ " << running_Total << " \n\n ";
+    
+    cout << " \n\n ";
+    
+    cout << " \t\t\t    PRESS ENTER TO CONTINUE ";
+    
+    cin.ignore(std::numeric_limits<streamsize>::max(), '\n');
+    
+    cin.get();
+    
+    exit(0);
+    
+}
+
+
+
+void menu_check()
+
+{
+    
+    if (menu_1 > 4 || menu_2 > 4 || menu_3 > 3 || menu_4 > 3 || menu_5 > 4 || menu_6 > 2)
+        
+    {
+        
+        cout << "\n\n\n \t\t YOU HAVE EXCEEDED THE MAXIMUM MENU ENTERIES FOR THIS ITEM ";
+        
+        cout << " \n\n ";
+    
+        cout << " \t\t\t    PRESS ENTER TO CONTINUE ";
+        
+        cin.ignore(std::numeric_limits<streamsize>::max(), '\n');
+        
+        cin.get();
+        
+        main();
+        
+    }
+    
+} //end
