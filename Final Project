@@ -9,7 +9,7 @@ using namespace std;
 
 void jasonDungeon();
 //void toriGame();
-//void mitchellGame();
+void mitchellGame();
 int main()
 
 {
@@ -199,6 +199,87 @@ void jasonDungeon() // <Jason>
         break;
                 
     }
+    
+    void mitchellGame() // <Mitchell>
+
+{
+
+	int menu;
+
+	cout << "\n\n\n\n\n\n\n \t WELCOME TO THE FOREST OF MITCHELL \n";
+
+	cout << "\n\n The goal is to locate and marry the princess  " << endl;
+
+	cout << "\n 1. Enter forest using elven path  " << endl;
+
+	cout << "\n 2. Enter forest using orc path  " << endl;
+
+	cout << "\n 3. END GAME " << endl;
+
+	cout << "\n Current Selection .......     ";
+
+	cin >> menu;
+
+
+
+	switch (menu)
+
+	{
+
+	case 1:
+		int choice;
+		cout << "\n A hot elf appears out of nowhere." << endl;
+		cout << "\n 1. Make out with her " << endl;
+		cout << "\n 2. Ask her for directions  " << endl;
+		cin >> choice;
+
+		switch (choice)
+		{
+		case 1:
+			
+			cout << "You two get married and live happily ever after. Although you failed the mission because it isn't the princess." << endl;
+			
+			
+		case 2:
+			
+			cout <<"She tells you where the princess is located and you get married to her." << endl;
+		
+			
+		default:
+			cout << "That's not a choice! GAME OVER!" << endl;
+			break;
+		}
+		break;
+	case 2:
+		int choiceTwo;
+		cout << "You encounter an orc. What do you do?" << endl;
+		cout << "\n 1. Kill with an ax ";
+		cout << "\n 2. Run";
+		cin >> choiceTwo;
+
+		switch (choiceTwo)
+		{
+		case 1:
+			cout << "You take a swing and end up missing. Game over :(" << endl;
+			break;
+		case 2:
+			cout << "You run and eventually outrun the orc and find the hot princess!! Mission accomplished!" << endl;
+			cout << "GAME OVER" << endl;
+			break;
+		default:
+			cout << "That's not a choice! GAME OVER!" << endl;
+			break;
+		}
+		break;
+	case 3:
+		cout << "END GAME" << endl;
+		break;
+
+	default:
+		cout << "That's not a choice! GAME OVER!" << endl;
+		break;
+
+	}
    
  
 } //end
