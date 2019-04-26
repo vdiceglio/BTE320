@@ -8,7 +8,7 @@ using namespace std;
 
 
 void jasonDungeon();
-//void toriGame();
+void toriGarden();
 void mitchellGame();
 int main()
 
@@ -22,7 +22,7 @@ int main()
     
     cout << "\n\n 1. Jason's Dungeon " << endl;
     
-    cout << "\n 2. TORI'S GAME  " << endl;
+    cout << "\n 2. Tori's Garden  " << endl;
     
     cout << "\n 3. MITCHELL'S GAME " << endl;
     
@@ -45,7 +45,7 @@ int main()
 //
 //        case 2:
 //
-//            toriGame();
+//            toriGarden();
 //
 //            break;
 //
@@ -264,6 +264,87 @@ void jasonDungeon() // <Jason>
 			break;
 		case 2:
 			cout << "You run and eventually outrun the orc and find the hot princess!! Mission accomplished!" << endl;
+			cout << "GAME OVER" << endl;
+			break;
+		default:
+			cout << "That's not a choice! GAME OVER!" << endl;
+			break;
+		}
+		break;
+	case 3:
+		cout << "END GAME" << endl;
+		break;
+
+	default:
+		cout << "That's not a choice! GAME OVER!" << endl;
+		break;
+
+	}
+	
+	void ToriGarden() // <Tori>
+
+{
+
+	int menu;
+
+	cout << "\n\n\n\n\n\n\n \t WELCOME TO THE GARDEN OF TORI \n";
+
+	cout << "\n\n The goal is to locate and find the lucky flower  " << endl;
+
+	cout << "\n 1. Enter garden using magical path  " << endl;
+
+	cout << "\n 2. Enter garden using spiritual path  " << endl;
+
+	cout << "\n 3. END GAME " << endl;
+
+	cout << "\n Current Selection .......     ";
+
+	cin >> menu;
+
+
+
+	switch (menu)
+
+	{
+
+	case 1:
+		int choice;
+		cout << "\n A goddess offers you guidance." << endl;
+		cout << "\n 1. Ask her for directions to the flower " << endl;
+		cout << "\n 2. Ignore her false help  " << endl;
+		cin >> choice;
+
+		switch (choice)
+		{
+		case 1:
+			
+			cout << "Yout take her directions and are led to the flower in the secret garden." << endl;
+			
+			
+		case 2:
+			
+			cout <<"You don't listen to her directions and follow your own path to find the flower." << endl;
+		
+			
+		default:
+			cout << "That's not a choice! GAME OVER!" << endl;
+			break;
+		}
+		break;
+	case 2:
+		int choiceTwo;
+		cout << "You approach a locked gate leading to another forest." << endl;
+		cout << "\n 1. You find the lock to unlock gate and enter the garden. ";
+		cout << "\n 2. You decide not to open another garden and stay in the same area";
+		cin >> choiceTwo;
+
+		switch (choiceTwo)
+		{
+		case 1:
+			cout << "You entered a deadly garden. Game over :(" << endl;
+			break;
+		case 2:
+			cout << "You stayed in the magical garden and found the spiritual flower" << endl;
 			cout << "GAME OVER" << endl;
 			break;
 		default:
